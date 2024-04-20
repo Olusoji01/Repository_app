@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./RepositoryList.css"; // Import CSS file for styling
 
-const RepositoryList = ({ username, token }) => {
+const RepositoryList = ({ username }) => {
   // Creating states to hold the repositories, page, search query, and filter option
   const [repositories, setRepositories] = useState([]);
   const [page, setPage] = useState(1);
@@ -12,7 +12,7 @@ const RepositoryList = ({ username, token }) => {
   // Calling useEffect to fetch the repositories
   useEffect(() => {
     fetchRepositories();
-  }, [username, token, page, searchQuery, filterOption]);
+  }, [username, page, searchQuery, filterOption]);
 
   const fetchRepositories = async () => {
     try {
@@ -20,9 +20,6 @@ const RepositoryList = ({ username, token }) => {
       const response = await axios.get(
         `https://api.github.com/users/${username}/repos`,
         {
-          headers: {
-            Authorization: `token ${token}`,
-          },
           params: {
             page: page,
             per_page: 10, // Number of repositories per page
