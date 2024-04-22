@@ -1,24 +1,25 @@
 // SingleRepository.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const SingleRepository = ({ match }) => {
+const SingleRepository = () => {
+  const { repoName } = useParams(); // Get the repoName from URL params
   const [repository, setRepository] = useState(null);
 
   useEffect(() => {
     const fetchRepository = async () => {
       try {
         const response = await axios.get(
-          `https://api.github.com/repos/${match.params.username}/${match.params.repoName}`
+          `https://api.github.com/repos/YourUsername/${repoName}` // Replace YourUsername with your GitHub username
         );
         setRepository(response.data);
       } catch (error) {
         console.error("Error fetching repository:", error);
       }
     };
-
     fetchRepository();
-  }, [match.params.username, match.params.repoName]);
+  }, [repoName]);
 
   if (!repository) {
     return <div>Loading...</div>;
@@ -36,3 +37,4 @@ const SingleRepository = ({ match }) => {
 };
 
 export default SingleRepository;
+

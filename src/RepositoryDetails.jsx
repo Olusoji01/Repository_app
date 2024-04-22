@@ -1,9 +1,8 @@
-// RepositoryDetails.js
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const RepositoryDetails = () => {
+const RepositoryDetails = ({username}) => {
   const { repoId } = useParams();
   const [repoDetails, setRepoDetails] = useState(null);
 
@@ -11,7 +10,7 @@ const RepositoryDetails = () => {
     const fetchRepoDetails = async () => {
       try {
         const response = await axios.get(
-          `https://api.github.com/repos/YourUsername/${repoId}` // Replace YourUsername with your GitHub username
+          `https://api.github.com/repos/${username}/${repoId}` // Replace YourUsername with your GitHub username
         );
         setRepoDetails(response.data);
       } catch (error) {
