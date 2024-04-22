@@ -80,8 +80,8 @@ const RepositoryList = ({ username }) => {
     <div className="repository-list-container">
       <div className="second_div">
         <div className="Testing_Error">
-          <button onClick={redirectToErrorPage}>Test Error Page</button>
-          <button onClick={redirectTo404Page}>Test 404 Page</button>
+          <button onClick={redirectToErrorPage} className="testing">Test Error Page</button>
+          <button onClick={redirectTo404Page} className="error">Test 404 Page</button>
         </div>
         <h2>GitHub Repositories</h2>
         <div className="search-container">

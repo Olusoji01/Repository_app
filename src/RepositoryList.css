@@ -61,3 +61,31 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.Testing_Error{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Testing_Error button {
+    padding: 8px 12px;
+    margin-right: 100px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.testing {
+    background-color: red;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-size: 20px;
+}
+
+.error {
+    background-color: teal;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-size: 20px;
+}
