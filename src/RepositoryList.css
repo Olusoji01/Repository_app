@@ -89,3 +89,60 @@
     color: white;
     font-size: 20px;
 }
+
+/* Mobile screen styles */
+@media only screen and (max-width: 600px) {
+    .repository-list-container {
+      padding: 10px;
+      border: none; /* Remove border for mobile screens */
+    }
+  
+    .second_div {
+      box-shadow: none; /* Remove box shadow for mobile screens */
+    }
+  
+    .search-container {
+      margin-bottom: 10px;
+    }
+  
+    .search-container input,
+    .search-container select {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .repository-list {
+      grid-template-columns: repeat(1, 1fr); /* Set single column for mobile */
+      height: auto; /* Auto height for mobile screens */
+    }
+  
+    .repository-list li {
+      margin-bottom: 20px;
+      background-color: rgba(0, 128, 128, 0.5);
+      border-radius: 10px;
+    }
+  
+    .repository-list li a {
+      padding-top: 20px; /* Adjust padding for mobile screens */
+    }
+  
+    .Testing_Error {
+      flex-direction: column; /* Change flex direction to column for mobile screens */
+      align-items: center; /* Align items to center for mobile screens */
+    }
+  
+    .Testing_Error button {
+      margin: 5px 0; /* Adjust margin for mobile screens */
+      width: 100%; /* Set full width for buttons on mobile screens */
+    }
+  
+    .pagination {
+      margin-top: 10px; /* Adjust margin for mobile screens */
+    }
+  
+    .pagination button {
+      width: 100%; /* Set full width for buttons on mobile screens */
+      margin-right: 0; /* Remove right margin for buttons on mobile screens */
+    }
+  }
+  
